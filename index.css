@@ -355,32 +355,25 @@ header.scrolled .nav-container {
 
 .brand-item {
   color: var(--text-muted);
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  opacity: 0.5;
+  opacity: 0.45;
   transition: var(--transition-smooth);
   user-select: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+}
+
+.brand-item img {
+  height: 32px;
+  width: auto;
+  max-width: 140px;
+  display: block;
+  transition: var(--transition-smooth);
 }
 
 .brand-item:hover {
   opacity: 0.95;
   color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.brand-dot {
-  width: 6px;
-  height: 6px;
-  background-color: var(--accent);
-  border-radius: 50%;
-  display: inline-block;
 }
 
 /* Sections General */
