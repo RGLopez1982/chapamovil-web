@@ -960,3 +960,13 @@ footer {
     padding: 4.5rem 0;
   }
 }
+
+/* Ocultar marca de agua de Elfsight */
+a[href*="elfsight.com"], 
+div[class*="eapps-link"],
+.eapps-link {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

@@ -206,4 +206,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fallback for older browsers
         loadMap(activeBranchId);
     }
+
+    // Helper to hide Elfsight watermark (even inside Shadow DOM)
+    const hideElfsightWatermark = () => {
+        // Normal DOM
+        const normalElements = document.querySelectorAll('a[href*="elfsight.com"], [class*="eapps-link"]');
+        normalElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
+
+        // Shadow DOM (Web Components)
+        const widgets = document.querySelectorAll('[class*="elfsight-app-"]');
+        widgets.forEach(widget => {
+            if (widget.shadowRoot) {
+                const shadowElements = widget.shadowRoot.querySelectorAll('a[href*="elfsight.com"], [class*="eapps-link"]');
+                shadowElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
+            }
+        });
+    };
+    setInterval(hideElfsightWatermark, 300);
 });
