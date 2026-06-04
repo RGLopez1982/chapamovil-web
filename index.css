@@ -354,7 +354,6 @@ header.scrolled .nav-container {
 }
 
 .brand-item {
-  color: var(--text-muted);
   opacity: 0.45;
   transition: var(--transition-smooth);
   user-select: none;
@@ -368,13 +367,15 @@ header.scrolled .nav-container {
   width: auto;
   max-width: 140px;
   display: block;
+  filter: invert(1) grayscale(1) brightness(1.8) contrast(1.2);
+  mix-blend-mode: screen;
   transition: var(--transition-smooth);
 }
 
 .brand-item:hover {
   opacity: 0.95;
-  color: #fff;
 }
+
 
 /* Sections General */
 section.py-section {
