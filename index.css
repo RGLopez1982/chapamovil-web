@@ -179,7 +179,7 @@ header.scrolled .nav-container {
   display: inline-block;
 }
 
-.logo-text span {
+.logo-text span.logo-accent {
   color: var(--accent);
   -webkit-text-fill-color: var(--accent);
 }
