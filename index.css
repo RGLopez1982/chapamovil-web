@@ -145,6 +145,7 @@ header.scrolled {
   justify-content: space-between;
   height: 80px;
   transition: var(--transition-smooth);
+  position: relative;
 }
 
 header.scrolled .nav-container {
@@ -169,6 +170,14 @@ header.scrolled .nav-container {
   background: linear-gradient(90deg, #fff 0%, #fff 60%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.header-logo-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
 .logo-icon {
