@@ -158,6 +158,9 @@ header.scrolled .nav-container {
 }
 
 .logo-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 800;
@@ -166,6 +169,14 @@ header.scrolled .nav-container {
   background: linear-gradient(90deg, #fff 0%, #fff 60%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.logo-icon {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  -webkit-text-fill-color: initial;
+  display: inline-block;
 }
 
 .logo-text span {
