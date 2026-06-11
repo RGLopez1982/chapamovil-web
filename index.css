@@ -143,13 +143,13 @@ header.scrolled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 110px;
   transition: var(--transition-smooth);
   position: relative;
 }
 
 header.scrolled .nav-container {
-  height: 60px;
+  height: 80px;
 }
 
 .logo-wrapper {
@@ -181,7 +181,7 @@ header.scrolled .nav-container {
 }
 
 .logo-icon {
-  height: 81px;
+  height: 90px;
   width: auto;
   object-fit: contain;
   -webkit-text-fill-color: initial;
@@ -190,7 +190,7 @@ header.scrolled .nav-container {
 }
 
 header.scrolled .logo-icon {
-  height: 54px;
+  height: 60px;
 }
 
 .logo-text span.logo-accent {
@@ -259,7 +259,7 @@ header.scrolled .logo-icon {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 110px;
   overflow: hidden;
 }
 
