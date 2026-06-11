@@ -181,11 +181,16 @@ header.scrolled .nav-container {
 }
 
 .logo-icon {
-  height: 54px;
+  height: 81px;
   width: auto;
   object-fit: contain;
   -webkit-text-fill-color: initial;
   display: inline-block;
+  transition: var(--transition-smooth);
+}
+
+header.scrolled .logo-icon {
+  height: 54px;
 }
 
 .logo-text span.logo-accent {
