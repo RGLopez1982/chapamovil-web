@@ -18,20 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger-menu');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navOverlay = document.getElementById('nav-overlay');
 
-    hamburger.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('open');
-        hamburger.classList.toggle('active');
+    const toggleMenu = (open) => {
+        const isOpen = open !== undefined ? open : !navMenu.classList.contains('open');
+        navMenu.classList.toggle('open', isOpen);
+        hamburger.classList.toggle('active', isOpen);
         hamburger.setAttribute('aria-expanded', isOpen);
-    });
+        if (navOverlay) {
+            navOverlay.classList.toggle('active', isOpen);
+        }
+        // Prevent scrolling body when menu is open
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    hamburger.addEventListener('click', () => toggleMenu());
+
+    if (navOverlay) {
+        navOverlay.addEventListener('click', () => toggleMenu(false));
+    }
 
     // Close menu when clicking links
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('open');
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', () => toggleMenu(false));
     });
 
     // 4. Scrollspy: Active Link on Scroll

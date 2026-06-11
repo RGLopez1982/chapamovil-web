@@ -253,6 +253,24 @@ header.scrolled .logo-icon {
   transition: var(--transition-smooth);
 }
 
+/* Fondo oscurecido para el menú móvil */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 12, 14, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -903,8 +921,35 @@ footer {
 
 @media (max-width: 768px) {
   /* Navigation Mobile */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+  }
+  
+  header.scrolled .nav-container {
+    height: 70px;
+  }
+  
+  .logo-icon {
+    height: 50px;
+  }
+  
+  header.scrolled .logo-icon {
+    height: 40px;
+  }
+  
+  .header-logo-text {
+    position: static;
+    transform: none;
+    font-size: 1.4rem;
+    margin-left: 0.75rem;
+  }
+  
   .hamburger {
     display: flex;
+    margin-left: auto;
   }
   
   .nav-menu {
@@ -939,6 +984,11 @@ footer {
     transform: translateY(-8px) rotate(-45deg);
   }
   
+  /* Hero Section */
+  .hero {
+    padding-top: 80px;
+  }
+
   .hero-title {
     font-size: 2.2rem;
   }
@@ -951,7 +1001,21 @@ footer {
     flex-direction: column;
     gap: 0.75rem;
   }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* Brands Carousel */
+  .brands-track {
+    gap: 2.5rem;
+  }
   
+  .brand-item img {
+    height: 28px;
+  }
+  
+  /* Rubros Section */
   .rubros-grid {
     grid-template-columns: 1fr;
   }
@@ -959,23 +1023,21 @@ footer {
   .rubro-card:last-child {
     grid-column: span 1;
   }
+
+  .rubro-info {
+    padding: 1.5rem;
+  }
+
+  .rubro-text {
+    margin-bottom: 1.5rem;
+  }
   
   .insta-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-  
+  /* Sucursales Section */
   .sucursales-selector {
     flex-direction: column;
     gap: 0.5rem;
@@ -986,9 +1048,62 @@ footer {
     width: 100%;
     text-align: center;
   }
+
+  .sucursal-display {
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .sucursal-detail-list {
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .sucursal-map-wrapper {
+    min-height: 250px;
+  }
+
+  /* Footer Styling */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+  }
   
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  /* General Spacing */
   section.py-section {
     padding: 4.5rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
   }
 }
 
